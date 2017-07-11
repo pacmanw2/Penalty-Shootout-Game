@@ -1,13 +1,6 @@
 package game;
 
- abstract class Player
+interface Player
 {
-	String playerName;
-	String position;
-	
-	public Player(String name)
-	{
-		this.playerName = name;
-		//this.position = position;
-	}
+	void performAction();
 }

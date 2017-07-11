@@ -2,7 +2,8 @@ package game;
 
 class GameMatch
 {
-	Team team;
+	Team team_1;
+	Team team_2;
 	
 	public void play()
 	{
@@ -11,7 +12,13 @@ class GameMatch
 	
 	private void setUp()
 	{
-		team = new Team();
+		team_1 = new Team();
+		team_2 = new Team();
+		
+		for(Player it : team_1.team)
+		{
+			it.performAction();
+		}
 	}
 
 }

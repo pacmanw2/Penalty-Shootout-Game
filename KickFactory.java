@@ -1,8 +1,7 @@
 package game;
-
 import java.util.HashMap;
 
-class KickFactory
+public class KickFactory
 {
 	private static final HashMap<String, KickBehavior> kickMap = new HashMap<String, KickBehavior>();
 

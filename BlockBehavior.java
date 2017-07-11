@@ -1,6 +1,6 @@
 package game;
 
-interface BlockBehavior
+public interface BlockBehavior
 {
 	void block();
 }

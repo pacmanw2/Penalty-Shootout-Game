@@ -1,6 +1,6 @@
 package game;
 
-interface KickBehavior
+public interface KickBehavior
 {
 	void kick();
 }

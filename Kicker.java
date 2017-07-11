@@ -2,14 +2,13 @@ package game;
 
 import java.util.Scanner;
 
-class Kicker extends Player
+class Kicker implements Player
 {
 	KickBehavior kickBhvr;
 	KickFactory kickFactory;
 
 	public Kicker(String name)
 	{
-		super(name);
 		kickFactory = new KickFactory();
 	}
 
@@ -23,11 +22,6 @@ class Kicker extends Player
 			int option = kb.nextInt();
 			setKickBehavior(option);
 		}
-	}
-
-	protected void performKick()
-	{
-		kickBhvr.kick();
 	}
 
 	private void setKickBehavior(int option)
@@ -46,5 +40,11 @@ class Kicker extends Player
 			kickBhvr = kickFactory.getKick("Deception Kick");
 			break;
 		}
+	}
+	
+	public void performAction()
+	{
+		kickOptions();
+		kickBhvr.kick();
 	}
 }
