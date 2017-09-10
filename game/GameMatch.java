@@ -70,6 +70,7 @@ class GameMatch
 
 		System.out.println("-------------Game Over-------------\nFinal Score: \n");
 		printScore();
+		System.out.println("\nWinner: " + winner);
 	}
 	
 	private void runPlay()
@@ -184,21 +185,24 @@ class GameMatch
 		System.out.print("\n\nHome: " + homeScore + "\nAway: " + awayScore);
 		System.out.println("\t\tRound: " + round + "\n");
 	}
-
+	
+	/*Use StringBuilder to build String display that is called
+	instead of iterating through the list
+	Every time we need to print. */
 	private void printScoreDisplay()
-    {
-        System.out.print("Home: ");
-        for(Character it : homeDisplay)
-        {
-            System.out.print(it + " ");
-        }
+    	{
+		System.out.print("Home: ");
+		for(Character it : homeDisplay)
+		{
+		    System.out.print(it + " ");
+		}
 
-        System.out.print("\nAway: ");
-        for(Character it : awayDisplay)
-        {
-            System.out.print(it + " ");
-        }
-    }
+		System.out.print("\nAway: ");
+		for(Character it : awayDisplay)
+		{
+		    System.out.print(it + " ");
+		}
+    	}
 
     private void updateScoreDisplay(int row, char result)
     {
