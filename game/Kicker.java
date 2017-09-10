@@ -7,6 +7,7 @@ class Kicker implements Player
 {
 	KickBehavior kickBhvr;
 	KickFactory kickFactory;
+	Kicker teamName;
 
 	public Kicker(String name)
 	{
@@ -15,14 +16,14 @@ class Kicker implements Player
 
 	protected void kickOptions()
 	{
-		
-		System.out.println("Kick Options\n-------------------------");
-		System.out.println("1. Placed Kick\n2. Power Kick\n3. Deception Kick");
-		
-		int option = UserInput.getUserInput();
-		
+		int option;
+		do
+		{
+			option = UserInput.getUserInput();
+			System.out.println("Kick Options\n-------------------------");
+			System.out.println("1. Placed Kick\n2. Power Kick\n3. Deception Kick");
+		}while(option > 3 || option < 1);
 		setKickBehavior(option);
-		
 	}
 
 	private void setKickBehavior(int option)
@@ -46,6 +47,18 @@ class Kicker implements Player
 	public void performAction()
 	{
 		kickOptions();
-		kickBhvr.kick();
+		//kickBhvr.kick();
+	}
+
+	public int actionMenu()
+	{
+		int location;
+		do
+		{
+			System.out.println("Select area to kick to\n1. Top Left\n2. Top Mid\n"
+					+ "3. Top Right\n4. Low Left\n5. Low Mid\n6. Low right\n");
+			location = UserInput.getUserInput();
+		}while(location > 6 || location < 1);
+		return location;
 	}
 }

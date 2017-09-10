@@ -1,5 +1,8 @@
 package game;
 
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
+
 import blocking.BlockBehavior;
 import blocking.BlockFactory;
 
@@ -7,10 +10,13 @@ class GoalKeeper implements Player
 {
 	BlockBehavior gkBhvr;
 	BlockFactory blockFactory;
+	int blockChance;
+	boolean eyesRead;
 	
 	public GoalKeeper(String name)
 	{
 		blockFactory = new BlockFactory();
+		blockChance = 1;
 	}
 	
 	public void blockOptions()
@@ -54,5 +60,32 @@ class GoalKeeper implements Player
 		blockOptions();
 		gkBhvr.block();
 	}
+
+	
+	public void readEyes()
+	{
+		Random rand = new Random();
+		int block = rand.nextInt(20) + 1;
+		eyesRead =  block <= blockChance;
+	}
+
+	/*To be used in multiplayer*/
+	public int actionMenu()
+	{
+		/*
+		 * To be used in multiplayer
+		  System.out.println("Select area to block to\n1. Top Left\n2. Top Mid\n + "
+				+ "3. Top Right\n 4. Low Left\n 5. Low Mid\n 6. Low right\n");
+		 */
+		
+		int location;
+		do
+		{
+			//location = UserInput.getUserInput();
+			location = ThreadLocalRandom.current().nextInt(1, 6 + 1);
+		}while(location > 6 || location < 1);
+		return location;
+	}
+
 
 }
