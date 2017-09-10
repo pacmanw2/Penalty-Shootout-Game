@@ -1,0 +1,11 @@
+Update Log. 
+9-10-17
+
+9-10-17:
+GameMatch now runs a match between two teams.
+A visual scoreboard as well as goals/misses board was added.
+  -A 'O' marks a goal, an 'X' marks a miss.
+
+Tournament table and group stage for the game is what is coming next. A Tree will be used for the tournament. 
+All Teams that qualify for the final stage of the tournament will be added in the last level of the tree.
+Teams who advance will climb up the tree. Where they will play the winner of the other node. 
